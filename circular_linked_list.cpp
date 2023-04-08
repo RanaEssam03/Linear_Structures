@@ -5,21 +5,9 @@
 #define CRCLR_LNKD_LST
 
 #include <iostream>
+#include "Node.cpp"
 
 using namespace std;
-
-template<typename T>
-struct Node
-{
-    T value;
-    Node<T>* next;
-    Node<T>* previous;
-    Node(){
-        next = nullptr;
-        previous = nullptr;
-    }
-};
-
 
 template<typename T>
 class CircularLinkedList{

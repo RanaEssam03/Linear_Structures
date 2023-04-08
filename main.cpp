@@ -26,8 +26,13 @@ int main(){
     sll.insertAt(3, 2000);
     sll.insertAt(0, 2000);
     sll.insertAt(11, 2000);
+    sll.removeAtHead();
+    sll.removeAtTail();
+    sll.removeAt(2);
     sll.print();
-    cout << sll.Size();
+    sll.print();
+    cout << sll.Size() << endl;
+    cout << sll.retrieveAt(0);
 //    Queue<int> q;
 //    q.enqueue(3);
 //    q.enqueue(5);

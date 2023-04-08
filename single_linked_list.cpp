@@ -69,11 +69,94 @@ public:
             size++;
         }
     }
-    void removeAtHead();
-    void removeAtTail();
-    void removeAt(int index);
-    T retrieveAt(int index);
-    void replaceAt(int index, T data);
+    void removeAtHead(){
+        if (isEmpty()){
+            cout << "List is already empty!" << "\n";
+            return;
+        }
+        node<T>* temp = head;
+        head = head->next;
+        free(temp);
+        size--;
+    }
+    void removeAtTail(){
+        if (isEmpty()){
+            cout << "List is already empty!" << "\n";
+        }
+        node<T>* current = head;
+        while (current->next != tail){
+            current = current->next;
+        }
+        node<T>* temp = current->next;
+        current->next = nullptr;
+        tail = current;
+        free(temp);
+        size--;
+    }
+    void removeAt(int index){
+        if (index == 0){
+            removeAtHead();
+        }
+        else if (index == size -1){
+            removeAtTail();
+        }
+        else if (index >= size){
+            cout << "Out of bounds!" << "\n";
+        }
+        else{
+            node<T>* current = head;
+            int i=0;
+            while (current != nullptr && i < index-1){
+                current = current->next;
+                i++;
+            }
+            node<T>* temp = current->next;
+            current->next = temp->next;
+            free(temp);
+            size--;
+        }
+    }
+    T retrieveAt(int index){
+        if (index == 0){
+            return head->info;
+        }
+        else if (index == size -1){
+            return tail->info;
+        }
+        else if (index >= size){
+            cout << "Out of bounds!" << "\n";
+            return -1;
+        }
+        else{
+            node<T>* current = head;
+            int i=0;
+            while (i < index){
+                current = current->next;
+                i++;
+            }
+            return current->info;
+        }
+    }
+    void replaceAt(int index, T data){
+        if (index == 0){
+            head->info = data;
+        }
+        else if (index == size -1){
+            tail->info = data;
+        }
+        else if (index >= size){
+            cout << "Out of bounds!" << "\n";
+        }
+        else{
+            node<T>* current = head;
+            int i=0;
+            while (i < index){
+                current = current->next;
+                i++;
+            }
+            current->info = data;
+        }
+    }
     bool isExist(T data){
         node<T>* current = head;
         while (current != nullptr){
@@ -84,7 +167,26 @@ public:
         }
         return false;
     }
-    bool isItemAtEqual(int index, T data);
+    bool isItemAtEqual(int index, T data){
+        if (index >= size){
+            cout << "Out of bounds!" << "\n";
+            return false;
+        }
+        else{
+            node<T>* current = head;
+            int i=0;
+            while (current != nullptr && i < index){
+                current = current->next;
+                i++;
+            }
+            if (current->info == data && i == index){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
     void swap(int index1, int index2);
     bool isEmpty(){
         if (head == nullptr){
@@ -98,12 +200,14 @@ public:
         return size;
     }
     void clear(){
-        node<T>* current = head;
-        while (current != nullptr){
-            node<T>* temp = current;
-            current = current->next;
+        while (head != nullptr){
+            node<T>* temp = head;
+            head = head->next;
             free(temp);
         }
+        head = nullptr;
+        tail = nullptr;
+        size = 0;
     }
     void print(){
         if (head == nullptr){

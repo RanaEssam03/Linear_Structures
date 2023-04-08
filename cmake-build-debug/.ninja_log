@@ -1,0 +1,15 @@
+# ninja log v5
+16	733	7026896815238235	CMakeFiles/Linear_Structures.dir/queue.cpp.obj	561a2a4a02f38619
+1	714	7026896815038220	CMakeFiles/Linear_Structures.dir/circular_linked_list.cpp.obj	aa2d9e4e76afe6a3
+6	656	7026898528474345	CMakeFiles/Linear_Structures.dir/main.cpp.obj	e347c4efcc97ff3a
+656	822	7026898530094324	Linear_Structures.exe	b2ababf82f0fa39d
+17	635	7026897937968251	CMakeFiles/Linear_Structures.dir/single_linked_list.cpp.obj	466b79b433223c89
+3	325	7026933796680983	build.ninja	3beb0ae88502615
+5	660	7026944578732231	CMakeFiles/Linear_Structures.dir/main.cpp.obj	e347c4efcc97ff3a
+660	1027	7026944582382204	Linear_Structures.exe	ba11faea81c7316b
+6	671	7026948736248658	CMakeFiles/Linear_Structures.dir/main.cpp.obj	e347c4efcc97ff3a
+672	837	7026948737858655	Linear_Structures.exe	ba11faea81c7316b
+5	671	7026948948328677	CMakeFiles/Linear_Structures.dir/main.cpp.obj	e347c4efcc97ff3a
+672	841	7026948949968669	Linear_Structures.exe	ba11faea81c7316b
+6	664	7026949124718691	CMakeFiles/Linear_Structures.dir/main.cpp.obj	e347c4efcc97ff3a
+665	829	7026949126328682	Linear_Structures.exe	ba11faea81c7316b

@@ -1,6 +1,8 @@
 // @TBK-2002 Nour El-din Ahmed
 // Created at: 1/4/2023
 
+#ifndef CRCLR_LNKD_LST
+#define CRCLR_LNKD_LST
 
 #include <iostream>
 
@@ -303,3 +305,5 @@ public:
         cout << '\n';
     }
 };
+
+#endif

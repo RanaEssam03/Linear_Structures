@@ -187,7 +187,44 @@ public:
             }
         }
     }
-    void swap(int index1, int index2);
+    void swap(int index1, int index2) {
+        if (index1 >= size || index2 >= size) {
+            cout << "Out of bounds!" << endl;
+            return;
+        }
+        int i = 0, j = 0;
+        node<T> *current1 = head;
+        node<T> *current2 = head;
+//        if (index1 == 0){
+//            while (j < index2 - 1) {
+//                current2 = current2->next;
+//                j++;
+//            }
+//            node<T> *temp1 = current1->next;
+//            node<T> *temp2 = current2->next;
+//            node<T> *temp2_2 = temp2->next;
+//            current1->next = temp2->next;
+//            temp2->next = temp1;
+//            temp1->next = temp2_2;
+//            head = temp2;
+//        }
+        while (i < index1 - 1) {
+            current1 = current1->next;
+            i++;
+        }
+        while (j < index2 - 1) {
+            current2 = current2->next;
+            j++;
+        }
+        node<T>* temp1 = current1->next;
+        node<T>* temp2 = current2->next;
+        node<T>* temp1_1 = temp1->next;
+        node<T>* temp2_2 = temp2->next;
+        temp1->next = temp2_2;
+        current1->next = temp2;
+        temp2->next = temp1_1;
+        current2->next = temp1;
+    }
     bool isEmpty(){
         if (head == nullptr){
             return true;

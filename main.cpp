@@ -32,7 +32,8 @@ int main(){
     sll.print();
     sll.print();
     cout << sll.Size() << endl;
-    cout << sll.retrieveAt(0);
+    sll.swap(2, 9);
+    sll.print();
 //    Queue<int> q;
 //    q.enqueue(3);
 //    q.enqueue(5);

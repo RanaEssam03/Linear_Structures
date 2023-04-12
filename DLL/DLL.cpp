@@ -3,6 +3,10 @@
 /// @brief this file contains the implementation of double liked list functions (DLL)
 
 #include "DLL.h"
+#include <bits/stdc++.h>
+using namespace std;
+
+
 
 /// @author Rana Essam
 /// \tparam T refers to the datatype

@@ -5,7 +5,7 @@
 
 #ifndef LINEAR_STRUCTURES_DLL_H
 #define LINEAR_STRUCTURES_DLL_H
-#include "../Node.h"
+#include "../Node.cpp"
 
 template <class T>
 

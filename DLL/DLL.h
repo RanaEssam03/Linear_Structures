@@ -34,8 +34,6 @@ public:
     bool isExist(T element);
     bool isItemAtEqual(T element, int index);
     void swap(int index1, int index2 );
-
-   void swap(Node<T> * &node1, Node<T> * & node2 );
     void reverse();
     bool isEmpty();
     int doubleLinkedListSize();

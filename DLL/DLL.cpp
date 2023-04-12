@@ -177,13 +177,24 @@ void DLL<T>::removeAt(int index) {
 
 template<class T>
 T DLL<T>::retrieveAt(int index) {
-    Node<T>* current = head;
-    int cnt =0;
-    while(cnt != index){
-        current = current->next;
-        cnt++;
+    try
+    {
+        if(sz == 0 || index <0 || index >=sz){
+            throw(index);
+        }
+
+        Node<T> *current = head;
+        int cnt = 0;
+        while (cnt != index) {
+            current = current->next;
+            cnt++;
+        }
+        return current->value;
+
     }
-    return current->value;
+    catch (int index){
+        cout << "index = " << index << " is out of Range\n";
+    }
 }
 
 template<class T>
@@ -231,60 +242,55 @@ bool DLL<T>::isItemAtEqual(T element, int index) {
 template<class T>
 void DLL<T>::swap(int index1, int index2) {
 
-    if(index1 >= sz || index2 >= sz){
+    if(index1 >= sz || index2 >= sz || index1 <0 || index2 < 0){
         cout << "Index Out Of Range!\n";
         return;
     }
     if (index1 == index2){
         return;
     }
-    Node<T>* current1 = head;
-    Node<T>* current2 = head;
+    Node<T>* node1 = head;
+    Node<T>* node2 = head;
     int cnt =0;
     while(cnt != index1){
-        current1 = current1->next;
+        node1 = node1->next;
         cnt++;
     }
     cnt =0;
     while(cnt != index2){
-        current2 = current2->next;
+        node2 = node2->next;
         cnt++;
     }
-    swap(current1, current2);
-}
-
-template<class T>
- void DLL<T>::swap(Node<T> *&node1, Node<T> *&node2) {
     Node<T>* temp = node1;
-    node1->next = node2->next;
-    node2->next = temp->next;
 
     if(node1->next != nullptr)
         node1->next->previous = node2;
     else
         tail = node2;
 
-
-
     if(node2->next != nullptr)
         node2->next->previous = temp;
     else
         tail = temp;
 
-    node1->previous = node2->previous;
-    node2->previous = temp->previous;
 
+    ::swap(node1->next, node2->next); // this is the function declared in move.h lib
 
     if(node2->previous != nullptr)
         node2->previous->next = temp;
     else
-        head = temp;
+        head = node1;
 
     if(node1->previous != nullptr)
         node1->previous->next = node2;
     else
         head = node2;
+
+    ::swap(node1->previous, node2->previous); // this is the function declared in move.h lib
+
 }
+
+
 
 template<class T>
 void DLL<T>::reverse() {

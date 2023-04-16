@@ -14,12 +14,14 @@ using namespace std;
 
 
 int main(){
-    DLL<int> list;
-    list.insertAtHead(0);
-    list.insertAtHead(1);
-    list.insertAtTail(5);
-    list.forwardTraversal();
-    list.swap(0,2);
-    list.forwardTraversal();
+    Array<int> arr;
+    arr.insert(3);
+    arr.insertAt(1, 10);
+    arr.insert(4);
+    arr.insert(5);
+    arr.insert(1);
+    arr.print();
+    arr.retrieveAt(10);
+    arr.print();
     return 0;
 }

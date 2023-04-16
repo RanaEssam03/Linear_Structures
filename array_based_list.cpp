@@ -50,19 +50,19 @@ public:
             cout << "Full capacity!" << "\n";
         }
     }
-//    T retrieveAt(int index){
-//        if (isEmpty()){
-//            cout << "Array is empty!" << "\n";
-//            return;
-//        }
-//        else if (index < 0 || index > size){
-//            cout << "Out of bounds!" << "\n";
-//            return;
-//        }
-//        else{
-//            return arr[index];
-//        }
-//    }
+    T retrieveAt(int index){
+        try{
+            if (isEmpty() || index < 0 || index > size){
+                throw index;
+            }
+            else{
+                return arr[index];
+            }
+        }
+        catch (int index){
+            cout << "index: " << index << " is out of bounds!" << "\n";
+        }
+    }
     void removeAt(int index){
         if (isEmpty()){
             cout << "Array is empty!" << "\n";

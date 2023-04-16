@@ -116,27 +116,31 @@ public:
             size--;
         }
     }
-//    T retrieveAt(int index){
-//        if (index == 0){
-//            return head->info;
-//        }
-//        else if (index == size -1){
-//            return tail->info;
-//        }
-//        else if (index >= size){
-//            cout << "Out of bounds!" << "\n";
-//            return -1;
-//        }
-//        else{
-//            node<T>* current = head;
-//            int i=0;
-//            while (i < index){
-//                current = current->next;
-//                i++;
-//            }
-//            return current->info;
-//        }
-//    }
+    T retrieveAt(int index){
+        try{
+            if (index == 0){
+                return head->info;
+            }
+            else if (index == size -1){
+                return tail->info;
+            }
+            else if (index >= size || index < 0){
+                throw index;
+            }
+            else{
+                node<T>* current = head;
+                int i=0;
+                while (i < index){
+                    current = current->next;
+                    i++;
+                }
+                return current->info;
+            }
+        }
+        catch (int index){
+            cout << "index: " << index << " is out of bounds!" << "\n";
+        }
+    }
     void replaceAt(int index, T data){
         if (index == 0){
             head->info = data;

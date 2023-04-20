@@ -1,7 +1,7 @@
-/// @author : Rana Essam
+/// @Author : Rana Essam
 /// @Created on 4/20/2023.
-/// @purpose: problem 3 Queue solution
-/// "sorting a queue without extra space"
+/// @Purpose: problem 3 Queue solution
+/// @Description sorting a queue without extra space
 
 
 #include "../queue.cpp"

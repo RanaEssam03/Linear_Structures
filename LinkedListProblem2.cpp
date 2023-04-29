@@ -1,11 +1,8 @@
-#include <iostream>
-#include "circular_linked_list.cpp"
-#include "queue.cpp"
-#include "single_linked_list.cpp"
-#include "array_based_list.cpp"
-#include "DLL/DLL.cpp"
+// author: Noor Eyad
+// Date: 4/29/2023.
 
-using namespace std;
+#include "single_linked_list.cpp"
+#include <iostream>
 
 void printList(node<int>* head){
     while (head != nullptr){

@@ -1,6 +1,6 @@
-//
-// Created by Rana Essam on 4/9/2023.
-//
+/// @author Rana Essam
+/// @date date description at  4/9/2023.
+/// @brief this file contains the implementation of Stack class using single linked list
 
 #include "Stack.h"
 

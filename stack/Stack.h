@@ -1,11 +1,11 @@
-//
-// Created by Rana Essam on 4/9/2023.
-//
+/// @author Rana Essam
+/// @date date description at  4/9/2023.
+/// @brief this file contains the declaration of Stack methods
 
 #ifndef LINEAR_STRUCTURES_STACK_H
 #define LINEAR_STRUCTURES_STACK_H
 
-#include "../single_linked_list.cpp"
+#include "../single_linked_list/single_linked_list.cpp"
 
 template<class T>
 class Stack {

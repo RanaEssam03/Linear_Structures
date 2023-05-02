@@ -1,4 +1,4 @@
-#include "circular_linked_list.cpp"
+#include "../circular_linked_list/circular_linked_list.cpp"
 #ifndef NQUEUE
 #define NQUEUE
 
@@ -13,7 +13,6 @@ public:
     Queue(){
         
     }
-
     void enqueue(T element){
         lst.insertAtEnd(element);
     }

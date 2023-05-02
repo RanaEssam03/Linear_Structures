@@ -1,10 +1,10 @@
-/// @Author : Rana Essam
-/// @Created on 4/20/2023.
-/// @Purpose: problem 2 Queue solution
-/// @Description:  designing a stack that supports push and pop operations using
-///the enqueue and dequeue operations of the queue
+/// @author : Rana Essam
+/// @created on 4/20/2023.
+/// @purpose: problem 2 Queue solution
+/// @description:  designing a stack that supports push and pop operations using
+/// the enqueue and dequeue operations of the queue
 
-#include "../queue.cpp"
+#include "../queue/queue.cpp"
 
 class Stack{
 private:
@@ -23,13 +23,13 @@ public:
 };
 
 
-//int main(){
-//    Stack s;
-//    s.push(5);
-//    s.push(4);
-//    s.push(1);
-//    int n = 3;
-//    while(n--){
-//        cout << s.pop() <<" ";
-//    }
-//}
+int main(){
+   Stack s;
+   s.push(5);
+   s.push(4);
+   s.push(1);
+   int n = 3;
+   while(n--){
+       cout << s.pop() <<" ";
+   }
+}

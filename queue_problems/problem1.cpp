@@ -1,10 +1,10 @@
-/// @author : Rana Essam
-/// @created on 4/20/2023.
-/// @purpose: problem 1 Queue solution
-/// @description: generating binary numbers from 1 to N using queue
+/// @Author : Rana Essam
+/// @Created on 4/20/2023.
+/// @Purpose: problem 1 Queue solution
+/// @Description: generating binary numbers from 1 to N using queue
 
 
-#include "../queue/queue.cpp"
+#include "..\queue.cpp"
 
 using namespace std;
 
@@ -47,7 +47,7 @@ public:
     }
 };
 
-int main() {
-   Problem1Queue p;
-    p.solve();
-}
+//int main() {
+//    Problem1Queue p;
+//    p.solve();
+//}

@@ -2,7 +2,7 @@
 // Created at: 8/4/2023
 
 #include <iostream>
-#include "../Node.cpp"
+#include "Node.cpp"
 
 #ifndef SNGL_LNKD_LST
 #define SNGL_LNKD_LST
@@ -20,6 +20,9 @@ public:
         head = nullptr;
         tail = nullptr;
         size = 0;
+    }
+    node<T>* getHead(){
+        return head;
     }
     void insertAtHead(T data){
         node<T>* newNode = new node<T>(data);
@@ -67,6 +70,20 @@ public:
             current->next = newNode;
             newNode->next = temp;
             size++;
+        }
+    }
+    void sortedInsertion(T data){
+        if (isEmpty() || data < head->info){
+            insertAtHead(data);
+        }
+        else{
+            node<T>* newNode = new node<T>(data);
+            node<T>* current = head;
+            while (current->next != nullptr && current->next->info < data){
+                current = current->next;
+            }
+            newNode->next = current->next;
+            current->next = newNode;
         }
     }
     void removeAtHead(){
@@ -191,43 +208,103 @@ public:
             }
         }
     }
-    void swap(int index1, int index2) {
-        if (index1 >= size || index2 >= size) {
+    void swapNodes(int index1, int index2) {
+        if (index1 >= size || index2 >= size || index1 < 0 || index2 < 0) {
             cout << "Out of bounds!" << endl;
             return;
         }
-        int i = 0, j = 0;
-        node<T> *current1 = head;
-        node<T> *current2 = head;
-//        if (index1 == 0){
-//            while (j < index2 - 1) {
-//                current2 = current2->next;
-//                j++;
-//            }
-//            node<T> *temp1 = current1->next;
-//            node<T> *temp2 = current2->next;
-//            node<T> *temp2_2 = temp2->next;
-//            current1->next = temp2->next;
-//            temp2->next = temp1;
-//            temp1->next = temp2_2;
-//            head = temp2;
-//        }
-        while (i < index1 - 1) {
-            current1 = current1->next;
+        if (index1 == index2){
+            return;
+        }
+        if (index1 > index2){
+            swap(index1, index2);
+        }
+        if (index1 == index2-1){
+            int i=0;
+            node<T>* node1 = head;
+            while (i < index1){
+                node1 = node1->next;
+                i++;
+            }
+            swap(node1->info, node1->next->info);
+            return;
+        }
+        if (index1 == 0 && index2 != size-1){
+            int i=0;
+            node<T>* prevIndex2 = head;
+            while (i < index2-1){
+                prevIndex2 = prevIndex2->next;
+                i++;
+            }
+            node<T>* node1 = head;
+            node<T>* node2 = prevIndex2->next;
+            node<T>* node1next = node1->next;
+            node<T>* node2next = node2->next;
+            node1->next = node2next;
+            node2->next = node1next;
+            prevIndex2->next = node1;
+            head = node2;
+            return;
+        }
+        if (index1 == 0 && index2 == size-1){
+            int i=0;
+            node<T>* prevIndex2 = head;
+            while (i < index2-1){
+                prevIndex2 = prevIndex2->next;
+                i++;
+            }
+            node<T>* node1 = head;
+            node<T>* node2 = tail;
+            node<T>* node1next = head->next;
+            node1->next = nullptr;
+            node2->next = node1next;
+            prevIndex2->next = node1;
+            head = node2;
+            tail = node1;
+            return;
+        }
+        if (index1 != 0 && index2 == size-1){
+            int i=0, j=0;
+            node<T>* prevIndex1 = head;
+            while (i < index1-1){
+                prevIndex1 = prevIndex1->next;
+                i++;
+            }
+            node<T>* prevIndex2 = head;
+            while (j < index2-1){
+                prevIndex2 = prevIndex2->next;
+                j++;
+            }
+            node<T>* node1 = prevIndex1->next;
+            node<T>* node2 = prevIndex2->next;
+            node<T>* node1Next = node1->next;
+            node<T>* node2Next = node2->next;
+            node1->next = node2Next;
+            node2->next = node1Next;
+            prevIndex1->next = node2;
+            prevIndex2->next = node1;
+            tail = node1;
+            return;
+        }
+        int i=0, j=0;
+        node<T>* prevIndex1 = head;
+        node<T>* prevIndex2 = head;
+        while (i < index1-1){
+            prevIndex1 = prevIndex1->next;
             i++;
         }
-        while (j < index2 - 1) {
-            current2 = current2->next;
+        while (j < index2-1){
+            prevIndex2 = prevIndex2->next;
             j++;
         }
-        node<T>* temp1 = current1->next;
-        node<T>* temp2 = current2->next;
-        node<T>* temp1_1 = temp1->next;
-        node<T>* temp2_2 = temp2->next;
-        temp1->next = temp2_2;
-        current1->next = temp2;
-        temp2->next = temp1_1;
-        current2->next = temp1;
+        node<T>* node1 = prevIndex1->next;
+        node<T>* node2 = prevIndex2->next;
+        node<T>* node1Next = node1->next;
+        node<T>* node2Next = node2->next;
+        node1->next = node2Next;
+        node2->next = node1Next;
+        prevIndex1->next = node2;
+        prevIndex2->next = node1;
     }
     bool isEmpty(){
         if (head == nullptr){

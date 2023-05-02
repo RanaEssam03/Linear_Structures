@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-#include "../Node.cpp"
+#include "Node.cpp"
 
 using namespace std;
 

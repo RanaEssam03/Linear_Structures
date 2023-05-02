@@ -1,6 +1,6 @@
 /// @author Rana Essam
 /// @created at 8/4/20223
-/// @brief this file contains the declaration of double liked list methods (DLL)
+/// @brief this file contains the declaration of double liked list functions (DLL)
 
 
 #ifndef LINEAR_STRUCTURES_DLL_H

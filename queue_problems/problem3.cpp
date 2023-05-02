@@ -1,10 +1,10 @@
-/// @author : Rana Essam
-/// @created on 4/20/2023.
-/// @purpose: problem 3 Queue solution
-/// @description: sorting a queue without extra space
+/// @Author : Rana Essam
+/// @Created on 4/20/2023.
+/// @Purpose: problem 3 Queue solution
+/// @Description sorting a queue without extra space
 
 
-#include "../queue/queue.cpp"
+#include "../queue.cpp"
 
 class Problem3Queue {
 public:
@@ -39,10 +39,10 @@ public:
 
 };
 
-int main() {
-   Problem3Queue p;
-   p.solve();
-}
+//int main() {
+//    Problem3Queue p;
+//    p.solve();
+//}
 
 
 
